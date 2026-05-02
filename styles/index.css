@@ -1,26 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --primary-color: #0079c8;
-    --secondary-color: #023556;
-    --bg-color: #F7F7F7;
+    --color-primary: #0079C8;
+    --color-primary-light: #00B5C8;
+    --color-secondary: #023556;
 
-    --font: "Poppins", sans-serif;
+    --color-bg-body: #f7f7f7;
+    --color-bg-card: #ffffff;
+
+    --color-text-main: #212529; 
+    --color-text-muted: #6c757d; 
+    --color-border: #dee2e6; 
+
+    /* Typography */
+    --font-family-base: "Poppins", sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font);
+    font-family: var(--font-family-base);
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--color-bg-body);
 }
 
 .navbar-toggler {
-    bottom: none;
+    border: none;
     outline: none;
 }
 
@@ -31,4 +39,81 @@ body {
 
 header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.consulta-card {
+    background: linear-gradient(135deg, #ffffff, #c4e0fd 100%);
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.titulo-card {
+    color: var(--color-secondary);
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+}
+
+.info-item {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+}
+
+.info-item i {
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+/* Estilização dos Botões */
+.btn-confirmar {
+    background-color: var( --color-primary-light);
+    border-color: var( --color-primary-light);
+    color: white;
+    font-weight: 500;
+}
+
+.btn-confirmar:hover {
+    background-color: var( --color-primary);
+    color: white;
+}
+
+.btn-reagendar {
+    color: var( --color-primary-light);
+    border-color: var( --color-primary-light);
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.btn-reagendar:hover {
+    background-color: var( --color-primary);
+    color: white;
+}
+
+/* Estilização do Relógio e Data */
+.badge-horario {
+    background-color: var( --color-primary-light);
+    font-size: 3rem;
+    letter-spacing: 2px;
+    padding: 0px 15px;
+    border-radius: 12px;
+}
+
+.texto-data {
+    color: var(--color-secondary);
+    font-size: 1.6rem;
+}
+
+.rodape-texto {
+    font-size: 0.65rem;
+    color: #888;
+}
+
+/* Mobile: horário acima */
+@media (max-width: 767.98px) {
+    .consulta-card .row { flex-wrap: wrap; }
+    .consulta-card .col-md-5 { order: -1; display:flex; align-items:center; justify-content:flex-start; }
+    .consulta-card .col-md-7 { order: 0; }
+    .consulta-card .badge-horario { margin-bottom: 0.5rem; }
 }
