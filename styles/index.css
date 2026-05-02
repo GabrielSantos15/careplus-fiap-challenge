@@ -123,19 +123,6 @@ header {
             font-size: 0.88rem;
         }
  
-        .link-ver-mais {
-            color: var(--color-primary);
-            font-size: 0.88rem;
-            font-weight: 600;
-            text-decoration: none;
-            white-space: nowrap;
-        }
- 
-        .link-ver-mais:hover {
-            color: var(--color-secondary);
-            text-decoration: underline;
-        }
- 
         /* Cards de produto / recompensa */
         .produto-card {
             background: var(--color-bg-card);
