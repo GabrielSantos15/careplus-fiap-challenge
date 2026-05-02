@@ -48,6 +48,42 @@
       cursor: default;
   }
 
+  .period-nav-btn {
+      color: var(--color-primary);
+  }
+
+  .period-nav-btn:hover {
+      color: var(--color-secondary);
+  }
+
+  #listaHorarios {
+      overflow-y: auto;
+  }
+
+  .time-slot {
+      border-left: 0;
+      border-right: 0;
+      border-radius: 0 !important;
+      padding: 14px 16px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+  }
+
+  .time-slot:hover:not(.disabled):not(.selected) {
+      background-color: #f0f4f8;
+      color: var(--color-primary);
+  }
+
+  .time-slot.selected {
+      background-color: var(--color-primary) !important;
+      color: #fff !important;
+  }
+
+  .time-slot.disabled {
+      opacity: 0.45;
+      pointer-events: none;
+  }
+
   .card {
       border-radius: 15px;
       overflow: hidden;
