@@ -82,17 +82,34 @@
 
     <main class="container">
         <section class="row p-4 g-4 align-items-start">
-            <article class="col-lg-5 col-12">
+            <article class="col-lg-4 col-12">
                 <h3>Reagendar Consulta</h3>
-                <p>Não vai poder comparecer? Sem problema! <br> Aqui você pode reagendar sua consulta de forma rápida e
-                    prática, escolhendo o melhor dia e horário para você. Ao reagendar com antecedência, você mantém
-                    seus pontos e ainda ajuda a organizar melhor o atendimento de todos os pacientes.</p>
-                <p class="text-muted">Escolha o melhor dia e o melhor horário para o seu reagendamento.</p>
+                <a class="text-muted" href="../index.html">Manter data original</a>
+                <!-- Resumo da Consulta Atual (Debbaixo do Título) -->
+                <div class="consulta-card card bg-light border-0 my-4" style="border-radius: 12px;">
+                    <div class="card-body p-3">
+                        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Consulta
+                            Atual</small>
+                        <p class="mb-0 fw-bold text-primary" id="displayConsultaAntiga">Quarta-feira, 18 de nov às 08:30
+                        </p>
 
-                <button class="btn btn-primary disabled" id="confirmBtn" disabled>Reagendar</button>
+                        <hr class="my-2">
+
+                        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Nova Data</small>
+                        <p class="mb-0 fw-bold text-success" id="displayNovaData">Selecione no calendário...</p>
+                    </div>
+                </div>
+
+                <p class="text-muted small">Ao reagendar com antecedência, você mantém seus pontos e ajuda outros
+                    pacientes.</p>
+
+                <div class="d-grid gap-2 d-md-flex mt-4">
+                    <button class="btn btn-primary px-4 py-2" id="confirmBtn" disabled>Confirmar</button>
+                    <button class="btn btn-outline-secondary px-4 py-2">Desistir</button>
+                </div>
             </article>
 
-            <article class="col-lg-7 col-12">
+            <article class="col-lg-8 col-12">
                 <div class="row g-3">
                     <div class="col-12 col-lg-8">
                         <div class="card border-0 shadow-lg h-100" style="border-radius: 15px;">

@@ -7,6 +7,7 @@ const listaHorarios = document.getElementById("listaHorarios");
 const periodoDia = document.getElementById("periodoDia");
 const prevPeriodBtn = document.getElementById("prevPeriod");
 const nextPeriodBtn = document.getElementById("nextPeriod");
+const displayNovaData = document.getElementById("displayNovaData");
 
 const periodos = [
   {
@@ -43,6 +44,29 @@ let date = new Date();
 let selectedDate = null;
 let selectedTimeSlot = null;
 let currentPeriodIndex = 0;
+
+function formatSelectedDate() {
+  if (!selectedDate) {
+    return "Selecione no calendário...";
+  }
+
+  const dateLabel = selectedDate.toLocaleDateString("pt-BR", {
+    weekday: "long",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+
+  if (selectedTimeSlot) {
+    return `${dateLabel} às ${selectedTimeSlot.label.split(" - ")[0]}`;
+  }
+
+  return dateLabel;
+}
+
+function updateSummary() {
+  displayNovaData.textContent = formatSelectedDate();
+}
 
 function updateConfirmState() {
   const isReady = Boolean(selectedDate && selectedTimeSlot);
@@ -146,6 +170,7 @@ function selectDate(element, day, month, year) {
   document.querySelectorAll(".calendar-day.selected").forEach((el) => el.classList.remove("selected"));
   element.classList.add("selected");
 
+  updateSummary();
   updateConfirmState();
   console.log("Data selecionada:", selectedDate.toLocaleDateString("pt-BR"));
 }
@@ -183,6 +208,7 @@ function renderTimeSlots() {
       document.querySelectorAll(".time-slot.selected").forEach((el) => el.classList.remove("selected"));
       button.classList.add("selected");
 
+      updateSummary();
       updateConfirmState();
       console.log("Horário selecionado:", selectedTimeSlot.label);
     });
@@ -213,3 +239,4 @@ nextPeriodBtn.onclick = () => changePeriod(1);
 
 renderCalendar();
 renderTimeSlots();
+updateSummary();
