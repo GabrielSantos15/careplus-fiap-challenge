@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/produtos.css">
+    <link rel="stylesheet" href="../styles/index.css">
+     <link rel="shortcut icon" href="images/Logotipo-Care_Plus.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+    <title>Comprar Caneca</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <img class="img-fluid" style="max-height:50px;" src="../images/carePlus-logo.svg" alt="">
+                </a>
+
+                <!-- Botão lateral -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu (desktop) -->
+                <div class="collapse navbar-collapse d-none d-lg-flex">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="produtos.html">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <!-- MENU LATERAL -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="menuLateral">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">CarePlus</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/produtos.html">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <section class="container">
+            <div class="row align-items-center border-bottom p-4">
+                <!-- Perfil -->
+                <div class="col-md-8 d-flex align-items-center">
+
+                    <img src="../images/perfil.png" alt="Foto de perfil" class="rounded-circle me-3" width="150"
+                        height="150">
+                    
+                    <div>
+                        <h5 class="display-6 mb-0">Olá Júlia</h5>
+                        
+                        <div class="fs-3">
+                            <span class="text-warning">&#9733;</span>
+                            <span class="text-warning">&#9733;</span>
+                            <span class="text-warning">&#9733;</span>
+                            <span class="text-warning">&#9733;</span>
+                            <span class="text-secondary">&#9733;</span>
+                        </div>
+                        
+                        <small class="text-muted fs-5"><strong>1250</strong> pontos</small>
+                    </div>
+                </div>
+
+                <!-- Logo -->
+                <div class="col-md-4 text-end d-none d-md-block">
+                    <img src="../images/Logotipo-Care_Plus.svg" alt="Care Plus" class="img-fluid"
+                        style="max-height:120px;">
+                </div>
+            </div>
+        </section>
+ 
+         <!-- Lista de produtos -->
+        <div class="produtos-lista">
+ 
+            <!-- Card 1 – Caneca -->
+            <div class="produto-detalhe">
+                <div class="produto-img-wrap">
+                    <img src="../images/canecaCarePlus.png" alt="Caneca CarePlus">
+                </div>
+                <div class="produto-info">
+                    <h2 class="produto-nome">Caneca CarePlus</h2>
+                    <p class="produto-descricao">
+                        A caneca personalizada CarePlus é um brinde exclusivo desenvolvido para celebrar o compromisso e a pontualidade dos nossos pacientes.<br><br>
+                        Produzida em cerâmica de alta qualidade, ela apresenta um design moderno com a marca CarePlus estampada em acabamento durável, ideal para uso diário.
+                    </p>
+                    <div class="comprar-row">
+                        <button class="btn-comprar">Comprar</button>
+                        <div>
+                            <span class="pontos-valor">950</span>
+                            <span class="pontos-label">pontos</span>
+                        </div>
+                    </div>
+                    <p class="produto-rodape">
+                        <i class="bi bi-geo-alt me-1"></i>
+                        Retirada disponível na clínica mais próxima de você.
+                    </p>
+                </div>
+            </div>
+ 
+            <!-- Card 2 – Camisa -->
+            <div class="produto-detalhe">
+                <div class="produto-img-wrap">
+                    <img src="../images/camisaCarePlus.png" alt="Camisa CarePlus">
+                </div>
+                <div class="produto-info">
+                    <h2 class="produto-nome">Camisa da CarePlus</h2>
+                    <p class="produto-descricao">
+                        Camisa exclusiva da CarePlus, confeccionada em algodão premium com tecnologia de impressão duradoura.<br><br>
+                        Um item especial para nossos pacientes mais dedicados, com design sofisticado e confortável para o dia a dia.
+                    </p>
+                    <div class="comprar-row">
+                        <button class="btn-comprar">Comprar</button>
+                        <div>
+                            <span class="pontos-valor">890</span>
+                            <span class="pontos-label">pontos</span>
+                        </div>
+                    </div>
+                    <p class="produto-rodape">
+                        <i class="bi bi-geo-alt me-1"></i>
+                        Retirada disponível na clínica mais próxima de você.
+                    </p>
+                </div>
+            </div>
+ 
+            <!-- Card 3 – Garrafa -->
+            <div class="produto-detalhe">
+                <div class="produto-img-wrap">
+                    <img src="../images/garrafaCarePlus.png" alt="Garrafa CarePlus">
+                </div>
+                <div class="produto-info">
+                    <h2 class="produto-nome">Garrafa CarePlus</h2>
+                    <p class="produto-descricao">
+                        Garrafa térmica personalizada CarePlus, fabricada em aço inox de alta durabilidade com tampa hermética.<br><br>
+                        Mantém sua bebida na temperatura ideal por até 12 horas, perfeita para quem valoriza saúde e hidratação no cotidiano.
+                    </p>
+                    <div class="comprar-row">
+                        <button class="btn-comprar">Comprar</button>
+                        <div>
+                            <span class="pontos-valor">750</span>
+                            <span class="pontos-label">pontos</span>
+                        </div>
+                    </div>
+                    <p class="produto-rodape">
+                        <i class="bi bi-geo-alt me-1"></i>
+                        Retirada disponível na clínica mais próxima de você.
+                    </p>
+                </div>
+            </div>
+ 
+            <!-- Card 4 – Fone -->
+            <div class="produto-detalhe">
+                <div class="produto-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&q=80" alt="Fone CarePlus">
+                </div>
+                <div class="produto-info">
+                    <h2 class="produto-nome">Fone CarePlus</h2>
+                    <p class="produto-descricao">
+                        Fone de ouvido exclusivo CarePlus com cancelamento de ruído e conectividade Bluetooth 5.0.<br><br>
+                        Desenvolvido para oferecer qualidade de som excepcional com o estilo e a identidade da marca CarePlus.
+                    </p>
+                    <div class="comprar-row">
+                        <button class="btn-comprar">Comprar</button>
+                        <div>
+                            <span class="pontos-valor">1200</span>
+                            <span class="pontos-label">pontos</span>
+                        </div>
+                    </div>
+                    <p class="produto-rodape">
+                        <i class="bi bi-geo-alt me-1"></i>
+                        Retirada disponível na clínica mais próxima de você.
+                    </p>
+                </div>
+            </div>
+ 
+        </div>
+    </main>
+ 
+</body>
+</html>
