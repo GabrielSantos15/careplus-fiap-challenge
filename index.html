@@ -111,9 +111,15 @@
             </div>
         </section>
         <section class="container my-4">
-            <a href="pages/agenda.html">AGENDAR</a>
+            <section class="container mb-3 d-flex justify-content-between align-items-center">
+                <h4 class="secao-titulo">Minha Agenda</h4>
+                <a href="pages/agenda.html">
+                    <button class="btn px-4 py-2 rounded-3 text-white fw-medium" style="background-color: #0076c8;"><i
+                            class="bi bi-plus-lg" style="font-size: 0.9rem;"></i>Agendar</button>
+                </a>
+            </section>
             <!-- Consulta card -->
-            <div class="consulta-card p-4 p-md-5 position-relative mx-auto w-100" id="consultaCard">
+            <div class="consulta-card p-4 p-md-5 position-relative mx-auto w-100 mb-4" id="consultaCard">
                 <!-- Título (mobile) -->
                 <h2 class="titulo-card mb-4 d-md-none">Próxima Consulta</h2>
 
@@ -150,7 +156,7 @@
                         <div class="badge-horario text-white fw-bold mb-2">
                             <output id="timeOutput">8:30</output>
                         </div>
-                        <div class="texto-data fw-medium">
+                        <div class="texto-data fw-medium text-capitalize">
                             <output id="dataOutput">Quarta, 18 de nov</output>
                         </div>
                     </div>
@@ -161,7 +167,21 @@
                 <div class="rodape-texto mt-3">
                     Compareça e ganhe +50 pontos, faltas sem aviso prévio perdem -100 pontos
                 </div>
-
+            </div>
+            <div class="accordion border-0 shadow-sm mt-3" id="accordionConsultas"
+                style="border-radius: 12px; overflow: hidden;">
+                <div class="accordion-item border-0">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-white fw-bold text-dark" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseLista">
+                            Outras Consultas Agendadas
+                        </button>
+                    </h2>
+                    <div id="collapseLista" class="accordion-collapse collapse" data-bs-parent="#accordionConsultas">
+                        <div class="accordion-body p-0" id="listaConsultasAcordeao">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- ── TROQUE SEUS PONTOS ── -->
