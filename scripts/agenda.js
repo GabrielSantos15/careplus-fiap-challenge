@@ -6,6 +6,9 @@ const finalizeAppointmentBtn = document.getElementById("finalizeAppointmentBtn")
 const modalSummary = document.getElementById("modalSummary");
 const modalAlert = document.getElementById("modalAlert");
 
+// Flag para prevenir múltiplos cliques
+let agendamentoEmProcesso = false;
+
 // Abre o Modal e monta o resumo
 function abrirModal() {
   if (!selectedDate || !selectedTimeSlot) {
@@ -54,6 +57,19 @@ function abrirModal() {
 
 // Confirmação Final e salvamento no LocalStorage 
 function finalizarAgendamento() {
+  // Previne múltiplos cliques
+  if (agendamentoEmProcesso) {
+    return;
+  }
+
+  agendamentoEmProcesso = true;
+  
+  // Desabilita o botão para feedback visual
+  if (finalizeAppointmentBtn) {
+    finalizeAppointmentBtn.disabled = true;
+    finalizeAppointmentBtn.textContent = "Processando...";
+  }
+
   const especialidade = especialidadeSelect ? especialidadeSelect.value : "Não informada";
   const unidade = unidadeSelect ? unidadeSelect.value : "Não informada";
   const description = patientDescription ? patientDescription.value.trim() : "";
@@ -73,26 +89,26 @@ function finalizarAgendamento() {
     // Busca o LocalStorage
     const existing = JSON.parse(localStorage.getItem("careplus_consultas")) || [];
 
-    // Adiciona
+    // Adiciona e salva
     existing.push(appointment);
-
-    // Salva 
     localStorage.setItem("careplus_consultas", JSON.stringify(existing));
-
-    console.log("Agendamento salvo:", appointment);
 
     if (modalAlert) {
       modalAlert.classList.remove("d-none");
     }
 
-    // Volta para a Home 
-    setTimeout(() => {
-      console.log("Redirecionando para home...");
-      window.location.href = "../index.html";
-    }, 2400);
+    // Volta para a Home
+    setTimeout(() => window.location.href = "../index.html", 2400);
 
   } catch (err) {
     console.error(err);
     alert("Erro ao salvar agendamento: " + err.message);
+    
+    // Reabilita o botão em caso de erro
+    agendamentoEmProcesso = false;
+    if (finalizeAppointmentBtn) {
+      finalizeAppointmentBtn.disabled = false;
+      finalizeAppointmentBtn.textContent = "Confirmar agendamento";
+    }
   }
 }

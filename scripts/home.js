@@ -51,14 +51,17 @@ function definirAtributo(elemento, atributo, valor) {
 
 function inicializarCardPrincipal() {
   const consultaCard = document.getElementById("consultaCard");
+  const semConsultaCard = document.getElementById("semConsultaCard");
   const proximaConsulta = obterConsultasFuturas()[0];
 
   if (!proximaConsulta) {
     consultaCard?.classList.add("d-none");
+    semConsultaCard?.classList.remove("d-none");
     return;
   }
 
   consultaCard?.classList.remove("d-none");
+  semConsultaCard?.classList.add("d-none");
   definirTexto(document.getElementById("localizationOutput"), proximaConsulta.unidade);
   definirTexto(document.getElementById("especialidadeOutput"), proximaConsulta.especialidade);
   definirTexto(document.getElementById("timeOutput"), proximaConsulta.time);

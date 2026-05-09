@@ -6,6 +6,10 @@ const modalAlert = document.getElementById("modalAlert");
 const finalizeAppointmentBtn = document.getElementById("finalizeAppointmentBtn");
 const confirmarRemocaoBtn = document.getElementById("confirmarRemocaoBtn");
 
+// Flag para prevenir múltiplos cliques
+let reagendamentoEmProcesso = false;
+let remocaoEmProcesso = false;
+
 const params = new URLSearchParams(window.location.search);
 const consultaId = params.get("id");
 
@@ -30,6 +34,15 @@ if (consultaIndex === -1) {
   window.location.href = "../index.html";
 } else {
   const consultaAtual = consultas[consultaIndex];
+
+  // Define a data original e o horário original
+  if (consultaAtual.date) {
+    updateOriginalConsultaDate(consultaAtual.date);
+  }
+  
+  if (consultaAtual.time) {
+    updateOriginalConsultaTime(consultaAtual.time);
+  }
 
   if (displayConsultaAntiga) {
     displayConsultaAntiga.textContent = formatarConsulta(consultaAtual.date, consultaAtual.time);
@@ -72,6 +85,19 @@ if (consultaIndex === -1) {
   }
 
   function finalizarReagendamento() {
+    // Previne múltiplos cliques
+    if (reagendamentoEmProcesso) {
+      return;
+    }
+
+    reagendamentoEmProcesso = true;
+
+    // Desabilita o botão para feedback visual
+    if (finalizeAppointmentBtn) {
+      finalizeAppointmentBtn.disabled = true;
+      finalizeAppointmentBtn.textContent = "Processando...";
+    }
+
     consultaAtual.date = selectedDate.toISOString();
     consultaAtual.time = selectedTimeSlot.label.split(" - ")[0];
     consultaAtual.status = "Reagendado";
@@ -90,6 +116,13 @@ if (consultaIndex === -1) {
     } catch (err) {
       console.error("Erro ao salvar reagendamento:", err);
       alert("Não foi possível salvar o reagendamento.");
+      
+      // Reabilita o botão em caso de erro
+      reagendamentoEmProcesso = false;
+      if (finalizeAppointmentBtn) {
+        finalizeAppointmentBtn.disabled = false;
+        finalizeAppointmentBtn.textContent = "Confirmar reagendamento";
+      }
     }
   }
 
@@ -113,6 +146,17 @@ if (consultaIndex === -1) {
 
   if (confirmarRemocaoBtn) {
     confirmarRemocaoBtn.addEventListener("click", () => {
+      // Previne múltiplos cliques
+      if (remocaoEmProcesso) {
+        return;
+      }
+
+      remocaoEmProcesso = true;
+
+      // Desabilita o botão para feedback visual
+      confirmarRemocaoBtn.disabled = true;
+      confirmarRemocaoBtn.textContent = "Removendo...";
+
       try {
         consultas.splice(consultaIndex, 1);
         localStorage.setItem("careplus_consultas", JSON.stringify(consultas));
@@ -130,6 +174,11 @@ if (consultaIndex === -1) {
       } catch (err) {
         console.error("Erro ao remover consulta:", err);
         alert("Não foi possível remover a consulta.");
+        
+        // Reabilita o botão em caso de erro
+        remocaoEmProcesso = false;
+        confirmarRemocaoBtn.disabled = false;
+        confirmarRemocaoBtn.textContent = "Remover";
       }
     });
   }

@@ -98,6 +98,38 @@ header {
     font-weight: 500;
 }
 
+/* mensagem sem consulta */
+.sem-consulta-card {
+    background: linear-gradient(135deg, #ffffff, #f0f4f8 100%);
+    border: 2px solid #dee2e6;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.sem-consulta-card:hover {
+    border-color: #fff;
+    box-shadow: 0 8px 24px rgba(0, 170, 200, 0.15);
+}
+
+.sem-consulta-icone {
+    font-size: 3rem;
+    color: var(--color-primary);
+}
+
+.sem-consulta-titulo {
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.sem-consulta-subtitulo {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
 .btn-reagendar:hover {
     background-color: var(--color-primary);
     color: white;
