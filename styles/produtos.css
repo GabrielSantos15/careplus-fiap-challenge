@@ -47,6 +47,7 @@
  .produto-img-wrap {
      flex: 0 0 auto;
      width: 100%;
+     max-height: 350px;
  }
 
  @media (min-width: 640px) {
