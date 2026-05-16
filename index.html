@@ -110,7 +110,7 @@
                 </div>
             </div>
         </section>
-        <section class="container my-4">
+        <section class="container my-4  mb-5">
             <section class="container mb-3 d-flex justify-content-between align-items-center">
                 <div>
                     <h4 class="secao-titulo">Minha Agenda</h4>
@@ -118,105 +118,105 @@
                 </div>
                 <a href="pages/agenda.html">
                     <button class="btn px-4 py-2 rounded-3 text-white fw-medium" style="background-color: #0076c8;"><i
-                            class="bi bi-plus-lg" style="font-size: 0.9rem;"></i>Agendar</button>
-                </a>
-            </section>
-            <!-- Consulta card -->
-            <div class="consulta-card p-4 p-md-5 position-relative mx-auto w-100 mb-4 d-none" id="consultaCard">
-                <!-- Título (mobile) -->
-                <h2 class="titulo-card mb-4 d-md-none">Próxima Consulta</h2>
-
-                <div class="row align-items-center">
-
-                    <!-- Ações / Detalhes -->
-                    <div class="col-md-7 order-2 order-md-1">
-
-                        <!-- Título (desktop) -->
-                        <h2 class="titulo-card mb-3 d-none d-md-block">Próxima Consulta</h2>
-
-                        <div class="detalhes mb-4">
-                            <div class="info-item">
-                                <i class="bi bi-cloud-rain me-1"></i> Previsão do tempo: Chuva leve
+                        class="bi bi-plus-lg" style="font-size: 0.9rem;"></i>Agendar</button>
+                    </a>
+                </section>
+                <!-- Consulta card -->
+                <div class="consulta-card p-4 p-md-5 position-relative mx-auto w-100 mb-4 d-none" id="consultaCard">
+                    <!-- Título (mobile) -->
+                    <h2 class="titulo-card mb-4 d-md-none">Próxima Consulta</h2>
+                    
+                    <div class="row align-items-center">
+                        
+                        <!-- Ações / Detalhes -->
+                        <div class="col-md-7 order-2 order-md-1">
+                            
+                            <!-- Título (desktop) -->
+                            <h2 class="titulo-card mb-3 d-none d-md-block">Próxima Consulta</h2>
+                            
+                            <div class="detalhes mb-4">
+                                <div class="info-item">
+                                    <i class="bi bi-cloud-rain me-1"></i> Previsão do tempo: Chuva leve
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-geo-alt me-1"></i> Local: <output id="localizationOutput"></output>
+                                </div>
+                                <div class="info-item">
+                                    <i class="bi bi-bag me-1"></i> Especialista: <output id="especialidadeOutput"></output>
+                                </div>
                             </div>
-                            <div class="info-item">
-                                <i class="bi bi-geo-alt me-1"></i> Local: <output id="localizationOutput"></output>
-                            </div>
-                            <div class="info-item">
-                                <i class="bi bi-bag me-1"></i> Especialista: <output id="especialidadeOutput"></output>
-                            </div>
-                        </div>
-
-                        <div class="d-flex gap-3 mb-3 mb-md-0">
-                            <button class="btn btn-confirmar px-4 py-2 rounded-3">Confirmar</button>
-                            <a id="reagendarLink" href="pages/reagendar.html"><button
+                            
+                            <div class="d-flex gap-3 mb-3 mb-md-0">
+                                <button class="btn btn-confirmar px-4 py-2 rounded-3">Confirmar</button>
+                                <a id="reagendarLink" href="pages/reagendar.html"><button
                                     class="btn btn-reagendar px-4 py-2 rounded-3">Reagendar</button></a>
+                                </div>
+                            </div>
+                            
+                            <!-- Horário -->
+                            <div
+                            class="col-md-5 order-1 order-md-2 d-flex flex-column align-items-md-center align-items-start mb-4 mb-md-0">
+                            <div class="badge-horario text-white fw-bold mb-2">
+                                <output id="timeOutput">8:30</output>
+                            </div>
+                            <div class="texto-data fw-medium text-capitalize">
+                                <output id="dataOutput">Quarta, 18 de nov</output>
+                            </div>
                         </div>
+                        
                     </div>
-
-                    <!-- Horário -->
-                    <div
-                        class="col-md-5 order-1 order-md-2 d-flex flex-column align-items-md-center align-items-start mb-4 mb-md-0">
-                        <div class="badge-horario text-white fw-bold mb-2">
-                            <output id="timeOutput">8:30</output>
-                        </div>
-                        <div class="texto-data fw-medium text-capitalize">
-                            <output id="dataOutput">Quarta, 18 de nov</output>
-                        </div>
+                    
+                    <!-- Observação -->
+                    <div class="rodape-texto mt-3">
+                        Compareça e ganhe +50 pontos, faltas sem aviso prévio perdem -100 pontos
                     </div>
-
                 </div>
-
-                <!-- Observação -->
-                <div class="rodape-texto mt-3">
-                    Compareça e ganhe +50 pontos, faltas sem aviso prévio perdem -100 pontos
+                <!-- Mensagem quando não há consulta -->
+                <div id="semConsultaCard" class="sem-consulta-card text-center p-5 mb-4">
+                    <div class="sem-consulta-icone mb-3">
+                        <i class="bi bi-calendar-x"></i>
+                    </div>
+                    <h3 class="sem-consulta-titulo mb-2">Nenhuma consulta agendada</h3>
+                    <p class="sem-consulta-subtitulo mb-4">Agende uma consulta agora mesmo para começar!</p>
+                    <a href="pages/agenda.html">
+                        <button class="btn btn-primary px-4 py-2 rounded-3 fw-medium">
+                            <i class="bi bi-plus-lg me-2"></i>Agendar Consulta
+                        </button>
+                    </a>
                 </div>
-            </div>
-            <!-- Mensagem quando não há consulta -->
-            <div id="semConsultaCard" class="sem-consulta-card text-center p-5 mb-4">
-                <div class="sem-consulta-icone mb-3">
-                    <i class="bi bi-calendar-x"></i>
-                </div>
-                <h3 class="sem-consulta-titulo mb-2">Nenhuma consulta agendada</h3>
-                <p class="sem-consulta-subtitulo mb-4">Agende uma consulta agora mesmo para começar!</p>
-                <a href="pages/agenda.html">
-                    <button class="btn btn-primary px-4 py-2 rounded-3 fw-medium">
-                        <i class="bi bi-plus-lg me-2"></i>Agendar Consulta
-                    </button>
-                </a>
-            </div>
-
-            <div class="accordion border-0 shadow-sm mt-3" id="accordionConsultas"
+                
+                <div class="accordion border-0 shadow-sm mt-3" id="accordionConsultas"
                 style="border-radius: 12px; overflow: hidden;">
                 <div class="accordion-item border-0">
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed bg-white fw-bold text-dark" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseLista">
-                            Outras Consultas Agendadas
-                        </button>
-                    </h2>
-                    <div id="collapseLista" class="accordion-collapse collapse" data-bs-parent="#accordionConsultas">
-                        <div class="accordion-body p-0" id="listaConsultasAcordeao">
-                        </div>
+                        data-bs-toggle="collapse" data-bs-target="#collapseLista">
+                        Outras Consultas Agendadas
+                    </button>
+                </h2>
+                <div id="collapseLista" class="accordion-collapse collapse" data-bs-parent="#accordionConsultas">
+                    <div class="accordion-body p-0" id="listaConsultasAcordeao">
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- ── TROQUE SEUS PONTOS ── -->
-        <section class="container my-4">
-            <div class="d-flex align-items-baseline justify-content-between mb-1">
-                <h2 class="secao-titulo">Troque seus pontos</h2>
-            </div>
-            <p class="secao-subtitulo mb-3">Você ganha pontos toda vez que aparece em uma consulta</p>
-
-            <div class="cards-container">
-                <!-- Card 1 -->
-                <a class="produto-link" href="pages/produtos.html#caneca-careplus">
-                    <div class="produto-card">
-                        <img src="images/canecaCarePlus.png" alt="Caneca CarePlus">
-                        <div class="produto-card-body">
-                            <div class="d-flex justify-content-between align-items-start">
-                                <span class="produto-nome">Caneca CarePlus</span>
-                                <span class="produto-pontos ms-2">950</span>
+        </div>
+    </section>
+    <!-- ── TROQUE SEUS PONTOS ── -->
+    <section class="container mb-5">
+        <div class="d-flex align-items-baseline justify-content-between mb-1">
+            <h2 class="secao-titulo">Troque seus pontos</h2>
+        </div>
+        <p class="secao-subtitulo mb-3">Você ganha pontos toda vez que aparece em uma consulta</p>
+        
+        <div class="cards-container">
+            <!-- Card 1 -->
+            <a class="produto-link" href="pages/produtos.html#caneca-careplus">
+                <div class="produto-card">
+                    <img src="images/canecaCarePlus.png" alt="Caneca CarePlus">
+                    <div class="produto-card-body">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <span class="produto-nome">Caneca CarePlus</span>
+                            <span class="produto-pontos ms-2">950</span>
                             </div>
                             <p class="produto-desc">A caneca personalizada CarePlus é uma...</p>
                         </div>

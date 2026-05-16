@@ -1,0 +1,58 @@
+/* ==================== EFEITOS DE IMAGEM ==================== */
+.img-effect-left, .img-effect-right {
+    position: relative;
+}
+
+.img-effect-left::before, .img-effect-right::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 5px;
+    width: 40%;
+    top: 5%;
+    z-index: 20;
+}
+
+.img-effect-left::before {
+    left: -5%;
+    background-image: linear-gradient(-90deg, var(--color-primary), transparent);
+}
+
+.img-effect-right::before {
+    right: -5%;
+    background-image: linear-gradient(90deg, var(--color-primary), transparent);
+}
+
+/* ==================== SEÇÕES ==================== */
+#funcionamento {
+    background: linear-gradient(135deg, #ffffff, #c4e0fd 100%);
+}
+
+.logo-navbar {
+    max-height: 50px;
+}
+
+.secao-titulo {
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+}
+
+/* ==================== ÍCONES E ELEMENTOS ==================== */
+.icon-card {
+    font-size: 3rem;
+}
+
+.star-icon {
+    font-size: 5rem;
+    color: #FFC107;
+    margin: 0 0.5rem;
+}
+
+/* ==================== TEXTOS ==================== */
+.section-label {
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+.section-description {
+    max-width: 700px;
+}
