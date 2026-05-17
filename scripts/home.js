@@ -79,20 +79,20 @@ function inicializarCardPrincipal() {
 
 function renderizarPainelConsultas() {
   const containerLista = document.getElementById("listaConsultasAcordeao");
-  const acordeaoPrincipal = document.getElementById("accordionConsultas"); // Pegando a div inteira do acordeão
+  const acordeaoPrincipal = document.getElementById("accordionConsultas");
 
   if (!containerLista) return;
 
   const consultas = obterConsultasFuturas();
-  const demaisConsultas = consultas.slice(1); // Pega todas MENOS a primeira (que já está no card azul)
+  const demaisConsultas = consultas.slice(1); // Pega todas MENOS a primeira 
 
-  // Se não tem outras consultas além da principal, esconde o acordeão inteiro e para aqui
+  // Se não tem outras consultas além da principal, esconde o acordeão 
   if (demaisConsultas.length === 0) {
     if (acordeaoPrincipal) acordeaoPrincipal.classList.add("d-none");
     return;
   }
 
-  // Se tem outras consultas, garante que o acordeão apareça
+  // Se tem outras consultas o acordeão apareça
   if (acordeaoPrincipal) acordeaoPrincipal.classList.remove("d-none");
 
   const html = demaisConsultas
@@ -103,12 +103,15 @@ function renderizarPainelConsultas() {
         month: "short",
       });
 
+      // Se o status vem vazio, coloca "Agendado"
+      const status = consulta.status || "Agendado";
+
       return `
         <div class="list-group-item d-flex justify-content-between align-items-center p-3 border-bottom">
             <div>
                 <h6 class="mb-1 fw-bold text-dark">${consulta.especialidade}</h6>
                 <small class="text-muted d-block"><i class="bi bi-geo-alt me-1"></i>${consulta.unidade}</small>
-                <span class="badge bg-light text-secondary mt-1 border">${consulta.status}</span>
+                <span class="badge bg-light text-secondary mt-1 border">${status}</span>
             </div>
             <div class="text-end text-lg-end mt-2 mt-sm-0">
                 <h5 class="mb-0 fw-bold" style="color: #0dcaf0;">${consulta.time}</h5>
@@ -129,6 +132,11 @@ function renderizarPainelConsultas() {
 // ─────────────────────────────────────────
 
 document.addEventListener("DOMContentLoaded", () => {
+  inicializarCardPrincipal();
+  renderizarPainelConsultas();
+});
+
+window.addEventListener('consultasAtualizadas', () => {
   inicializarCardPrincipal();
   renderizarPainelConsultas();
 });

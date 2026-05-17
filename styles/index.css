@@ -4,6 +4,9 @@
     --color-primary: #0079C8;
     --color-primary-light: #00B5C8;
     --color-secondary: #023556;
+    
+    --color-confirm: #11d3a2;
+    --color-confirm-hover: #0fb6a8;
 
     --color-bg-body: #f7f7f7;
     --color-bg-card: #ffffff;
@@ -88,6 +91,17 @@ header {
 
 .btn-confirmar:hover {
     background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-confirmar.confirmado {
+    background-color: var(--color-confirm);
+    border-color:  var(--color-confirm);
+    color: white;
+}
+
+.btn-confirmar.confirmado:hover {
+    background-color:  var(--color-confirm-hover);
     color: white;
 }
 
