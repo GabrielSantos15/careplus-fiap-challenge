@@ -1,3 +1,4 @@
+
 /* ==================== EFEITOS DE IMAGEM ==================== */
 .img-effect-left, .img-effect-right {
     position: relative;
@@ -55,4 +56,17 @@
 
 .section-description {
     max-width: 700px;
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 992px) {
+    .img-effect-left::before, .img-effect-right::before {
+        top: -5%;
+    }
+    .img-effect-left::before{
+        right: 0;
+    }
+    .img-effect-right::before{
+        left: 0;
+    }
 }
